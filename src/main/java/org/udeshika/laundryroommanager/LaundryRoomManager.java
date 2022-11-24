@@ -15,8 +15,6 @@ import org.udeshika.laundryroommanager.services.UserService;
 
 import java.time.LocalDate;
 import java.util.Optional;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class LaundryRoomManager {
     public static void main(String[] args) {

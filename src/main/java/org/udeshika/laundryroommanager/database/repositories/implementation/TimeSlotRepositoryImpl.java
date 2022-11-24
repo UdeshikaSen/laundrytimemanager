@@ -142,7 +142,6 @@ public class TimeSlotRepositoryImpl implements TimeSlotRepository {
                         rs.getString("laundryRoomId"));
 
             }
-            rs.close();
             return Optional.ofNullable(bookedTimeSlot);
         } catch (SQLException e) {
             logger.log(INFO, String.format("DB error in getting time slots for user:%s  %s: ", userId, e));

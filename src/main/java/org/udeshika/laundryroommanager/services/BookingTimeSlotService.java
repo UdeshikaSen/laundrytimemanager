@@ -1,18 +1,14 @@
 package org.udeshika.laundryroommanager.services;
 
 import org.udeshika.laundryroommanager.database.repositories.TimeSlotRepository;
-import org.udeshika.laundryroommanager.enums.LaundryStartTime;
 import org.udeshika.laundryroommanager.models.BookingTimeSlot;
 import org.udeshika.laundryroommanager.services.helpers.BookingTimeSlotServiceHelper;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.logging.Logger;
 
-import static java.time.temporal.ChronoUnit.*;
-import static java.util.logging.Level.INFO;
 import static java.util.logging.Level.WARNING;
 
 /**

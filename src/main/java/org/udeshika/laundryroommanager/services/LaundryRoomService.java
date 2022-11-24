@@ -1,7 +1,6 @@
 package org.udeshika.laundryroommanager.services;
 
 import org.udeshika.laundryroommanager.database.repositories.LaundryRoomRepository;
-import org.udeshika.laundryroommanager.database.repositories.implementation.LaundryRoomImpl;
 import org.udeshika.laundryroommanager.models.LaundryRoom;
 
 import java.util.logging.Logger;
