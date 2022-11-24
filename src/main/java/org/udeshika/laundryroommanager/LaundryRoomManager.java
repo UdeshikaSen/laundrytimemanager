@@ -50,7 +50,7 @@ public class LaundryRoomManager {
                 testsUser1.getUserId(), testLaundryRoom1.getRoomId().getValue());
 
         if (bookingTimeSlotService.bookTimeSlot(testLaundryBooking1)) {
-            System.out.println(String.format("Laundry time added for user %s on %s at %s-%s", testsUser1.getName()
+            System.out.println(String.format("Laundry time added for user %s on %s at %s-%s", testsUser1.getUserId()
                     , testLaundryBooking1.getBookingDate(), testLaundryBooking1.getStartTime().getValue()
                     , testLaundryBooking1.getEndTime().getValue()));
             System.out.println();
@@ -80,10 +80,12 @@ public class LaundryRoomManager {
         // get the details of the booking to be deleted
         Optional<BookingTimeSlot> testDeleteTimeSLot1 = bookingTimeSlotService.
                 getBookedTimeSlotsByUserInADay(testLaundryBooking1.getBookingDate(), testsUser1.getUserId());
-        bookingTimeSlotService.cancelBooking(testsUser1.getUserId(), testDeleteTimeSLot1.get().getTimeSlotId());
+        testDeleteTimeSLot1.ifPresent(bookingTimeSlot ->
+                bookingTimeSlotService.cancelBooking(testsUser1.getUserId(), bookingTimeSlot.getTimeSlotId()));
 
         Optional<BookingTimeSlot> testDeleteTimeSLot2 = bookingTimeSlotService.
                 getBookedTimeSlotsByUserInADay(testLaundryBooking2.getBookingDate(), testsUser2.getUserId());
-        bookingTimeSlotService.cancelBooking(testsUser2.getUserId(), testDeleteTimeSLot2.get().getTimeSlotId());
+        testDeleteTimeSLot2.ifPresent(bookingTimeSlot ->
+                bookingTimeSlotService.cancelBooking(testsUser2.getUserId(), bookingTimeSlot.getTimeSlotId()));
     }
 }
